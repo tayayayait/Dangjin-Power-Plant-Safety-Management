@@ -1,0 +1,20 @@
+{
+  "screensaverTimeout": 120,
+  "viewerTimeout": 60,
+  "viewerCountdown": 10,
+  "adminSessionTimeout": 300,
+  "adminPin": "000000",
+  "adminLockDuration": 300,
+  "adminMaxAttempts": 5,
+  "screensaverSlideInterval": 5,
+  "categories": [
+    { "id": "cat-1", "name": "본부 지도", "description": "사업장 배치도 및 대피경로", "enabled": true },
+    { "id": "cat-2", "name": "안전관리 수칙", "description": "작업 안전 수칙 및 가이드", "enabled": true },
+    { "id": "cat-3", "name": "보건관리 정보", "description": "건강관리 및 보건 안내", "enabled": true },
+    { "id": "cat-4", "name": "사고 사례 전파", "description": "사고 사례 및 예방 조치", "enabled": true },
+    { "id": "cat-5", "name": "비상시 대응 조치", "description": "비상 상황 행동 요령", "enabled": true },
+    { "id": "cat-6", "name": "긴급 위험 신고", "description": "위험 신고 절차 안내", "enabled": true },
+    { "id": "cat-7", "name": "교육 자료", "description": "안전 교육 영상 및 문서", "enabled": true },
+    { "id": "cat-8", "name": "공지사항", "description": "발전본부 주요 공지", "enabled": true }
+  ]
+}

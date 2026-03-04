@@ -1,0 +1,278 @@
+/* Pretendard 로컬 폰트 (오프라인 키오스크 환경) */
+@import "pretendard/dist/web/static/pretendard.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary & Secondary — DESIGN.md Source of Truth */
+    --color-primary: 214 100% 40%;
+    --color-primary-dark: 214 100% 30%;
+    --color-primary-light: 214 100% 95%;
+    --color-secondary: 40 100% 50%;
+    --color-secondary-dark: 40 100% 40%;
+    --color-secondary-light: 40 100% 95%;
+
+    /* Semantic */
+    --color-success: 133 67% 33%;
+    --color-success-bg: 120 41% 93%;
+    --color-warning: 40 100% 50%;
+    --color-warning-bg: 40 100% 94%;
+    --color-danger: 0 65% 51%;
+    --color-danger-bg: 4 82% 95%;
+    --color-info: 214 100% 40%;
+    --color-info-bg: 214 100% 95%;
+
+    /* Neutrals */
+    --gray-900: 0 0% 10%;
+    --gray-700: 0 0% 29%;
+    --gray-500: 0 0% 54%;
+    --gray-300: 0 0% 77%;
+    --gray-100: 0 0% 94%;
+    --gray-50: 220 14% 96%;
+    --white: 0 0% 100%;
+
+    /* Screensaver */
+    --screensaver-bg: 214 60% 10%;
+    --screensaver-text: 0 0% 100%;
+    --screensaver-accent: 214 100% 60%;
+
+    /* Shadcn mappings */
+    --background: 220 14% 96%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 214 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 54%;
+    --accent: 214 100% 95%;
+    --accent-foreground: 214 100% 40%;
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 77%;
+    --input: 0 0% 77%;
+    --ring: 214 100% 60%;
+    --radius: 12px;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 210 100% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 60% 94%;
+    --sidebar-accent-foreground: 210 100% 33%;
+    --sidebar-border: 0 0% 77%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Spacing */
+    --space-4: 4px;
+    --space-8: 8px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-20: 20px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-40: 40px;
+    --space-48: 48px;
+    --space-64: 64px;
+    --space-80: 80px;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.14);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.18);
+    --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+
+    /* Motion */
+    --duration-instant: 100ms;
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    --duration-slide: 600ms;
+    --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+    --easing-enter: cubic-bezier(0, 0, 0.2, 1);
+    --easing-exit: cubic-bezier(0.4, 0, 1, 1);
+    --easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Z-Index */
+    --z-base: 0;
+    --z-card: 10;
+    --z-sticky: 20;
+    --z-drawer: 30;
+    --z-modal-backdrop: 40;
+    --z-modal: 50;
+    --z-toast: 60;
+    --z-tooltip: 70;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    font-family:
+      "Pretendard",
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    overscroll-behavior: none;
+    touch-action: manipulation;
+  }
+  img,
+  video {
+    -webkit-user-drag: none;
+  }
+}
+
+/* 가로 모드 강제 (세로 모드 차단) */
+@media screen and (orientation: portrait) {
+  body::before {
+    content: "당진화력발전소 키오스크는 가로 화면 전용입니다. 화면을 가로로 회전해 주세요.";
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: hsl(var(--gray-900));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+    line-height: 1.5;
+  }
+  #root {
+    display: none !important;
+  }
+}
+
+/* Touch ripple effect */
+@layer utilities {
+  .touch-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+  .touch-ripple::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background: hsl(var(--color-primary) / 0.15);
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .touch-ripple:active::after {
+    animation: ripple-effect 300ms ease-out;
+  }
+}
+
+@keyframes ripple-effect {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--gray-300));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--gray-500));
+}
+
+/* Pulse animation for screensaver */
+@keyframes gentle-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* Screensaver crossfade */
+@keyframes crossfade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes crossfade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Shake animation for error */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+  }
+}
